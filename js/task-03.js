@@ -12,3 +12,15 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const makeImagesMarkup = ({ url, alt }) => {
+  return `<li><img style="display: block; padding: 15px; margin: 0 auto" src="${url}" alt="${alt}" width="720"></li>`;
+};
+
+const galleryEl = document.querySelector('#gallery');
+const makeGallery = images.map(makeImagesMarkup).join(' ');
+
+galleryEl.insertAdjacentHTML('afterbegin', makeGallery);
+galleryEl.style.listStyle = 'none';
+galleryEl.style.padding = '0';
+galleryEl.style.margin = '0';
