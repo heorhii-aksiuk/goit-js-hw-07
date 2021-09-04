@@ -17,7 +17,6 @@ const createList = function (parentSelector, itemsListToCreate) {
   });
 
   parent.append(...elements);
-  console.log(...elements);
 };
 
 createList('#ingredients', ingredients);
