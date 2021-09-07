@@ -25,28 +25,26 @@ const refs = {
   boxesDivEl: document.querySelector('#boxes'),
 };
 
-const test = '#6e1a1a'
-const arrayToCreate = []
+const test = '#6e1a1a';
+const arrayToCreate = [];
+let inputValue;
 
+refs.renderBtn.addEventListener('click', onRenderBtnClick);
 refs.inputEl.addEventListener('blur', onInputChange);
 
-function onInputChange () {
-  for (let i = 1; i <= refs.inputEl.value; i += 1) {
-    let size = 10 + (5 * i);
-    arrayToCreate.push(`<div style="display: inline-block; background-color: ${test}; padding: ${size}px; margin: 5px"></div>`)
-  }
-    let string = arrayToCreate.join('')
-    console.log(string);
-    return refs.boxesDivEl.insertAdjacentHTML('afterbegin', string)
+function onInputChange() {
+  inputValue = refs.inputEl.value;
 }
 
+function onRenderBtnClick() {
+  for (let i = 1; i <= inputValue; i += 1) {
+    let size = 10 + 5 * i;
+    arrayToCreate.push(
+      `<div style="display: inline-block; background-color: ${test}; padding: ${size}px; margin: 5px"></div>`,
+    );
+  }
+  let string = arrayToCreate.join('');
+  return refs.boxesDivEl.insertAdjacentHTML('afterbegin', string);
+}
 
-
-
-// const onRenderBtnClick = () => {
-//   const divEl = document.createElement('div');
-//   refs.boxesDivEl.insertAdjacentElement('afterend', divEl);
-// };
-
-// refs.renderBtn.addEventListener('click', onRenderBtnClick);
 // refs.destroyBtn.addEventListener('click', onDestroyBtnClick);
