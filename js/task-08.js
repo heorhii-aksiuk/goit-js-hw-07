@@ -38,12 +38,12 @@ function onRenderBtnClick() {
 
 function onDestroyBtnClick() {
   refs.inputEl.value = 0;
-  return (refs.boxesDivEl.innerHTML = '');
+  refs.boxesDivEl.innerHTML = '';
 }
 
 function randomColor() {
-  let r = Math.ceil(Math.random() * 257);
-  let g = Math.ceil(Math.random() * 257);
-  let b = Math.ceil(Math.random() * 257);
+  let r = Math.floor(Math.random() * 257);
+  let g = Math.floor(Math.random() * 257);
+  let b = Math.floor(Math.random() * 257);
   return `rgb(${r},${g},${b})`;
 }
