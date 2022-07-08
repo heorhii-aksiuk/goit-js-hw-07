@@ -1,2 +1,2 @@
 # goit-js-hw-07
-Репозиторий домашнего задания #07 по JS (DOM. События)
+GoIT. JavaScript. Homework #7 (DOM, events)
